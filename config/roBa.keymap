@@ -278,7 +278,7 @@
             label = "ME";
         };
 
-        mo: mo {
+        mo_: mo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp M &kp O>;
@@ -621,7 +621,7 @@
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
+            bindings = <&mo_>, <&to_layer_0>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -634,7 +634,7 @@
         default_layer {
             bindings = <
 &kp Q      &kp W         &ltsu         &ga                          &kp T                                                          &kp Y        &ki    &na    &kp O  &kp P
-&ta        &ka           &nn           &shi                         &kp G        &kp LS(LG(S))                      &kp MINUS      &kp H        &kp I  &kp U  &no    &to_
+&ta        &ka           &nn           &shi                         &ma          &kp LS(LG(S))                      &kp MINUS      &mo_         &kp I  &kp U  &no    &to_
 &ku        &kp X         &ru           &de                          &kp B        &kp COLON                          &kp SEMICOLON  &kp N        &ni    &ko    &ha    &kp SLASH
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                       &kp DEL
             >;
