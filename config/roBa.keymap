@@ -46,7 +46,7 @@
 
         tu {
             bindings = <&tsu>;
-            key-positions = <13 3>;
+            key-positions = <13 18>;
         };
 
         ji {
@@ -66,7 +66,7 @@
 
         wa {
             bindings = <&wa>;
-            key-positions = <18 6>;
+            key-positions = <18 12>;
         };
 
         da {
@@ -142,6 +142,161 @@
         ro {
             bindings = <&ro>;
             key-positions = <11 20>;
+        };
+
+        ba {
+            bindings = <&ba>;
+            key-positions = <13 19>;
+        };
+
+        ya {
+            bindings = <&ya>;
+            key-positions = <12 19>;
+        };
+
+        go {
+            bindings = <&go>;
+            key-positions = <10 19>;
+        };
+
+        hu {
+            bindings = <&fu>;
+            key-positions = <10 21>;
+        };
+
+        lya {
+            bindings = <&lya>;
+            key-positions = <12 19>;
+        };
+
+        ne {
+            bindings = <&ne>;
+            key-positions = <10 20>;
+        };
+
+        ho {
+            bindings = <&ho>;
+            key-positions = <18 10>;
+        };
+
+        ge {
+            bindings = <&ge>;
+            key-positions = <11 21>;
+        };
+
+        bi {
+            bindings = <&bi>;
+            key-positions = <13 18>;
+        };
+
+        zu {
+            bindings = <&zu>;
+            key-positions = <12 21>;
+        };
+
+        he {
+            bindings = <&he>;
+            key-positions = <13 21>;
+        };
+
+        bo {
+            bindings = <&bo>;
+            key-positions = <11 18>;
+        };
+
+        gu {
+            bindings = <&gu>;
+            key-positions = <13 3 18>;
+        };
+
+        be {
+            bindings = <&be>;
+            key-positions = <13 3 19>;
+        };
+
+        yu {
+            bindings = <&yu>;
+            key-positions = <13 3 20>;
+        };
+
+        nakaguro {
+            bindings = <&kp SLASH>;
+            key-positions = <12 2 18>;
+        };
+
+        nu {
+            bindings = <&nu>;
+            key-positions = <13 3 21>;
+        };
+
+        za {
+            bindings = <&za>;
+            key-positions = <13 18 6>;
+        };
+
+        di {
+            bindings = <&di>;
+            key-positions = <12 18 6>;
+        };
+
+        du {
+            bindings = <&du>;
+            key-positions = <11 18 6>;
+        };
+
+        ze {
+            bindings = <&ze>;
+            key-positions = <10 18 6>;
+        };
+
+        zo {
+            bindings = <&zo>;
+            key-positions = <12 2 18>;
+        };
+
+        pa {
+            bindings = <&pa>;
+            key-positions = <12 2 19>;
+        };
+
+        pi {
+            bindings = <&pi>;
+            key-positions = <12 20 2>;
+        };
+
+        pu {
+            bindings = <&pu>;
+            key-positions = <12 2 21>;
+        };
+
+        pe {
+            bindings = <&pe>;
+            key-positions = <13 19 7>;
+        };
+
+        po {
+            bindings = <&po>;
+            key-positions = <12 19 7>;
+        };
+
+        li {
+            bindings = <&li>;
+            key-positions = <10 22>;
+        };
+
+        lu {
+            bindings = <&lu>;
+            key-positions = <11 23>;
+        };
+
+        le {
+            bindings = <&le>;
+            key-positions = <20 32>;
+        };
+
+        lo {
+            bindings = <&lo>;
+            key-positions = <21 33>;
         };
     };
 
@@ -697,6 +852,13 @@
             bindings = <&kp X &kp O>;
             label = "LO";
         };
+
+        vu: vu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp U>;
+            label = "VU";
+        };
     };
 
     keymap {
@@ -704,9 +866,9 @@
 
         default_layer {
             bindings = <
-&kp COMMA  &ku           &ltsu         &tsu   &kp T                                          &kp Y        &wa    &na    &te  &kp PERIOD
+&kp COMMA  &ku           &ltsu         &bi    &la                                            &vu          &bu    &na    &te  &kp PERIOD
 &ta        &ka           &nn           &shi   &ma          &kp LS(LG(S))      &kp MINUS      &mo_         &kp I  &kp U  &no  &to_
-&re        &lyo          &ru           &de    &kp B        &kp COLON          &kp SEMICOLON  &kp N        &ni    &ko    &ha  &ri
+&re        &lyo          &ru           &de    &gi          &kp COLON          &kp SEMICOLON  &mu          &ni    &ko    &ha  &ri
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none  &lt 2 SPACE  &none              &kp BACKSPACE  &lt 1 ENTER                     &kp DEL
             >;
 
