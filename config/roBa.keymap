@@ -879,10 +879,19 @@
 &bi        &ku           &ltsu         &kp COMMA  &la                                            &vu          &kp PERIOD  &na    &te  &bu
 &ta        &ka           &nn           &shi       &ma          &kp LS(LG(S))      &kp MINUS      &mo_         &kp I       &kp U  &no  &to_
 &re        &lyo          &ru           &de        &gi          &kp COLON          &kp SEMICOLON  &mu          &ni         &ko    &ha  &ri
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none      &lt 2 SPACE  &none              &kp BACKSPACE  &lt 1 ENTER                          &kp DEL
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none      &lt 3 SPACE  &none              &kp BACKSPACE  &lt 2 ENTER                          &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+        };
+
+        English {
+            bindings = <
+&kp Q   &kp W   &kp E   &kp R   &kp T                       &kp Y   &kp U  &kp I      &kp O    &kp P
+&kp A   &kp S   &kp D   &kp F   &kp G   &trans      &kp J   &kp H   &kp J  &kp K      &kp L    &kp SEMI
+&kp Z   &kp X   &kp C   &kp V   &kp B   &trans      &trans  &kp N   &kp M  &kp COMMA  &kp DOT  &kp FSLH
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                             &trans
+            >;
         };
 
         FUNCTION {
