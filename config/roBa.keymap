@@ -888,6 +888,20 @@
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &mo 1>;
             label = "COMMAND";
         };
+
+        ja_en: ja_en {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_1 &tog 1>;
+            label = "JA_EN";
+        };
+
+        en_ja: en_ja {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &tog 1>;
+            label = "EN_JA";
+        };
     };
 
     behaviors {
@@ -908,6 +922,40 @@
 
             tapping-term-ms = <200>;
         };
+
+        ja_en_behavior: ja_en_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            label = "JA_EN_BEHAVIOR";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&ja_en>;
+
+            tapping-term-ms = <200>;
+        };
+
+        en_ja_behavior: en_ja_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            label = "EN_JA_BEHAVIOR";
+            bindings = <&mo>, <&en_ja>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        susumu_modoru_behavior: susumu_modoru_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SUSUMU_MODORU_BEHAVIOR";
+            #binding-cells = <0>;
+            bindings = <&kp LG(RIGHT_BRACKET)>, <&kp LG(BACKSLASH)>;
+        };
+
+        to_english2_behavior: to_english2_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TO_ENGLISH2_BEHAVIOR";
+            bindings = <&to_english>, <&susumu_modoru_behavior>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -915,10 +963,10 @@
 
         default_layer {
             bindings = <
-&bi        &ku                   &ltsu                 &kp COMMA         &la                                                                                                              &vu          &kp PERIOD  &na    &te  &bu
-&ta        &ka                   &nn                   &shi              &ma          &kp K_MUTE                                             &kp C_VOLUME_UP                              &mo_         &lt 6 I     &kp U  &no  &to_
-&re        &lyo                  &ru                   &de               &gi          &kp C_SLEEP_MODE                                       &kp C_VOLUME_DOWN                            &mu          &ni         &ko    &ha  &ri
-&kp LCTRL  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &layer_layer 2 1  &lt 3 SPACE  &to_english_behavior LEFT_ALT LANG_ZENKAKUHANKAKU      &to_english_behavior LEFT_COMMAND BACKSPACE  &lt 4 ENTER                          &kp LANG1
+&bi             &ku                   &ltsu                 &kp COMMA            &la                                                                   &vu                                      &kp PERIOD  &na    &te  &bu
+&ta             &ka                   &nn                   &shi                 &ma          &kp K_MUTE                            &kp C_VOLUME_UP    &mo_                                     &lt 6 I     &kp U  &no  &to_
+&re             &lyo                  &ru                   &de                  &gi          &kp K_SLEEP                           &kp C_VOLUME_DOWN  &mu                                      &ni         &ko    &ha  &ri
+&kp LANGUAGE_1  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &ja_en_behavior 2 0  &lt 3 SPACE  &to_english2_behavior LEFT_ALT 0      &kp BACKSPACE      &to_english_behavior LEFT_COMMAND ENTER                          &kp LANGUAGE_2
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -926,10 +974,10 @@
 
         English {
             bindings = <
-&kp Q   &kp W   &kp E   &kp R   &kp T                       &kp Y   &kp U  &kp I      &kp O    &kp P
-&kp A   &kp S   &kp D   &kp F   &kp G   &trans      &kp J   &kp H   &kp J  &kp K      &kp L    &kp SEMI
-&kp Z   &kp X   &kp C   &kp V   &kp B   &trans      &trans  &kp N   &kp M  &kp COMMA  &kp DOT  &kp FSLH
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                             &trans
+&kp Q   &kp W   &kp E   &kp R                &kp T                       &kp Y   &kp U  &kp I      &kp O    &kp P
+&kp A   &kp S   &kp D   &kp F                &kp G   &trans      &kp J   &kp H   &kp J  &kp K      &kp L    &kp SEMI
+&kp Z   &kp X   &kp C   &kp V                &kp B   &trans      &trans  &kp N   &kp M  &kp COMMA  &kp DOT  &kp FSLH
+&trans  &trans  &trans  &en_ja_behavior 2 0  &trans  &trans      &trans  &trans                             &trans
             >;
         };
 
