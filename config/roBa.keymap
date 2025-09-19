@@ -885,7 +885,7 @@
         to_english: command {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &mo 1>;
+            bindings = <&kp &macro_param_1 &mo 1>;
             label = "COMMAND";
         };
     };
