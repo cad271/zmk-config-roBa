@@ -918,7 +918,7 @@
 &bi        &ku                   &ltsu                 &kp COMMA         &la                                                                                                              &vu          &kp PERIOD  &na      &te  &bu
 &ta        &ka                   &nn                   &shi              &ma          &kp K_MUTE                                             &kp C_VOLUME_UP                              &mo_         &kp I       &lt 6 U  &no  &to_
 &re        &lyo                  &ru                   &de               &gi          &kp C_SLEEP_MODE                                       &kp C_VOLUME_DOWN                            &mu          &ni         &ko      &ha  &ri
-&kp LCTRL  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &layer_layer 2 1  &lt 4 SPACE  &to_english_behavior LEFT_ALT LANG_ZENKAKUHANKAKU      &to_english_behavior LEFT_COMMAND BACKSPACE  &lt 3 ENTER                            &kp LANGUAGE_5
+&kp LCTRL  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &layer_layer 2 1  &lt 4 SPACE  &to_english_behavior LEFT_ALT LANG_ZENKAKUHANKAKU      &to_english_behavior LEFT_COMMAND BACKSPACE  &lt 3 ENTER                            &kp LANG1
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
