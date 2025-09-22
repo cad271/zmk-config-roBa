@@ -901,6 +901,13 @@
             bindings = <&kp LANGUAGE_2 &tog 1>;
             label = "EN_JA";
         };
+
+        left_down: left_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_X(-600) &mmv MOVE_X(-600) &mmv MOVE_X(-600)>;
+            label = "LEFT_DOWN";
+        };
     };
 
     behaviors {
@@ -964,7 +971,7 @@
             bindings = <
 &bi             &ku                   &ltsu                 &kp COMMA                         &la                                                                                  &vu          &kp PERIOD  &na    &te  &bu
 &ta             &ka                   &nn                   &shi                              &ma                                      &kp K_MUTE               &kp C_VOLUME_UP    &mo_         &lt 6 I     &kp U  &no  &to_
-&re             &lyo                  &ru                   &de                               &gi                                      &kp K_SLEEP              &kp C_VOLUME_DOWN  &mu          &ni         &ko    &ha  &ri
+&re             &lyo                  &ru                   &de                               &gi                                      &left_down               &kp C_VOLUME_DOWN  &mu          &ni         &ko    &ha  &ri
 &kp LANGUAGE_1  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &to_english2_behavior LEFT_ALT 0  &to_english_behavior LEFT_COMMAND SPACE  &ja_en_behavior 2 0      &kp BACKSPACE      &lt 3 ENTER                          &kp LANGUAGE_2
             >;
 
@@ -1000,10 +1007,10 @@
 
         ARROW {
             bindings = <
-&kp Q   &kp W   &kp E   &kp R   &kp T                       &trans  &trans          &kp UP    &trans     &trans
-&kp A   &kp S   &kp D   &kp F   &kp G   &trans      &trans  &trans  &kp LEFT_ARROW  &kp DOWN  &kp RIGHT  &trans
-&kp Z   &kp X   &kp C   &kp V   &kp B   &trans      &trans  &trans  &trans          &trans    &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                       &trans
+&kp Q   &kp W   &kp E   &kp R   &kp T                               &trans  &trans          &kp UP    &trans     &trans
+&kp A   &kp S   &kp D   &kp F   &kp G           &trans      &trans  &trans  &kp LEFT_ARROW  &kp DOWN  &kp RIGHT  &trans
+&kp Z   &kp X   &kp C   &kp V   &kp B           &trans      &trans  &trans  &trans          &trans    &trans     &trans
+&trans  &trans  &trans  &trans  &kp LEFT_SHIFT  &trans      &trans  &trans                                       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
