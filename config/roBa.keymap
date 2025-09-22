@@ -905,7 +905,7 @@
         left_down: left_down {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&mmv MOVE_X(-600) &mmv MOVE_X(-600) &mmv MOVE_X(-600)>;
+            bindings = <&mmv MOVE_X(-5000) &mmv MOVE_Y(-5000)>;
             label = "LEFT_DOWN";
         };
     };
