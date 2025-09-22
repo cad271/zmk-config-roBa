@@ -891,14 +891,14 @@
         ja_en: ja_en {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_1 &tog 1>;
+            bindings = <&kp LANGUAGE_2 &tog 1>;
             label = "JA_EN";
         };
 
         en_ja: en_ja {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_2 &tog 1>;
+            bindings = <&kp LANGUAGE_1 &tog 1>;
             label = "EN_JA";
         };
 
@@ -951,7 +951,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SUSUMU_MODORU_BEHAVIOR";
             #binding-cells = <0>;
-            bindings = <&kp LG(RIGHT_BRACKET)>, <&kp LG(BACKSLASH)>;
+            bindings = <&kp LG(LEFT_BRACKET)>, <&kp LG(RIGHT_BRACKET)>;
+
+            tapping-term-ms = <400>;
         };
 
         to_english2_behavior: to_english2_behavior {
