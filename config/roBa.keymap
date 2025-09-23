@@ -308,20 +308,27 @@
             key-positions = <13 3>;
         };
 
-        to_layer2 {
-            bindings = <&mo 2>;
+        to_layer3 {
+            bindings = <&mo 3>;
             key-positions = <41 37>;
             layers = <1>;
         };
 
-        to_layer4 {
-            bindings = <&layer_layer 4 4>;
+        to_layer2 {
+            bindings = <&layer_layer 2 2>;
             key-positions = <38 41>;
+            layers = <0 1>;
         };
 
         cmd_opt {
             bindings = <&cmd_opt LEFT_COMMAND LEFT_ALT>;
             key-positions = <38 37>;
+        };
+
+        from_layer2 {
+            bindings = <&tog 2>;
+            key-positions = <41 39>;
+            layers = <0 1>;
         };
     };
 
@@ -998,7 +1005,7 @@
 &bi             &ku                   &ltsu                 &kp COMMA                         &la                                                                                           &vu          &kp PERIOD  &na    &te  &bu
 &ta             &ka                   &nn                   &shi                              &ma                                      &kp K_MUTE                        &kp C_VOLUME_UP    &mo_         &lt 6 I     &kp U  &no  &to_
 &re             &lyo                  &ru                   &de                               &gi                                      &kp LS(LA(LG(P)))                 &kp C_VOLUME_DOWN  &mu          &ni         &ko    &ha  &ri
-&kp LANGUAGE_1  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &to_english2_behavior LEFT_ALT 0  &to_english_behavior LEFT_COMMAND SPACE  &ja_en_behavior LEFT_SHIFT 0      &kp BACKSPACE      &lt 3 ENTER                          &kp LANGUAGE_2
+&kp LANGUAGE_1  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &to_english2_behavior LEFT_ALT 0  &to_english_behavior LEFT_COMMAND SPACE  &ja_en_behavior LEFT_SHIFT 0      &kp BACKSPACE      &lt 4 ENTER                          &kp LANGUAGE_2
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -1011,6 +1018,17 @@
 &kp Z   &kp X   &kp C   &kp V   &kp B   &trans                            &trans  &kp N   &kp M    &kp COMMA  &kp DOT  &kp FSLH
 &trans  &trans  &trans  &trans  &trans  &en_ja_behavior LEFT_SHIFT 0      &trans  &trans                               &trans
             >;
+        };
+
+        ARROW {
+            bindings = <
+&kp Q   &kp W   &kp E   &kp R   &kp T                               &trans  &trans          &kp UP    &trans     &trans
+&kp A   &kp S   &kp D   &kp F   &kp G           &trans      &trans  &trans  &kp LEFT_ARROW  &kp DOWN  &kp RIGHT  &trans
+&kp Z   &kp X   &kp C   &kp V   &kp B           &trans      &trans  &trans  &mo 6           &trans    &trans     &trans
+&trans  &trans  &trans  &trans  &kp LEFT_SHIFT  &trans      &trans  &trans                                       &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
         FUNCTION {
@@ -1029,17 +1047,6 @@
 &kp AT_SIGN        &kp LEFT_BRACKET  &kp PERCENT           &kp N9       &kp LESS_THAN  &kp SINGLE_QUOTE      &kp SEMICOLON  &kp GREATER_THAN  &kp N8     &kp DOT                &kp RIGHT_BRACKET  &kp UNDERSCORE
 &kp HASH           &kp DOLLAR        &kp COLON             &trans       &trans         &trans                &trans         &trans                                                                 &kp PIPE
             >;
-        };
-
-        ARROW {
-            bindings = <
-&kp Q   &kp W   &kp E   &kp R   &kp T                               &trans  &trans          &kp UP    &trans     &trans
-&kp A   &kp S   &kp D   &kp F   &kp G           &trans      &trans  &trans  &kp LEFT_ARROW  &kp DOWN  &kp RIGHT  &trans
-&kp Z   &kp X   &kp C   &kp V   &kp B           &trans      &trans  &trans  &mo 6           &trans    &trans     &trans
-&trans  &trans  &trans  &trans  &kp LEFT_SHIFT  &trans      &trans  &trans                                       &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
         MOUSE {
