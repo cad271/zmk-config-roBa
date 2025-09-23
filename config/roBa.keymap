@@ -973,7 +973,7 @@
 
         // 単押し → Backspace
         // 長押し → Commandを押しっぱなし + Layer2に移動
-        bindings = <&kp>, <&mt &mo>;
+        bindings = <&mt &mo>, <&kp>;
         };
     };
 
