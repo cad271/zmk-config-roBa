@@ -328,7 +328,7 @@
         from_layer2 {
             bindings = <&tog 2>;
             key-positions = <41 39>;
-            layers = <0 1>;
+            layers = <2>;
         };
     };
 
