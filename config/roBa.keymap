@@ -973,7 +973,7 @@
 
         // 単押し → Backspace
         // 長押し → Commandを押しっぱなし + Layer2に移動
-        bindings = <&kp BACKSPACE>, <&mt LCMD &to 2>;
+        bindings = <&kp>, <&mt &mo>;
         };
     };
 
