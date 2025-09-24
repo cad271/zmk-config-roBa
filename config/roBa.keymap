@@ -311,7 +311,6 @@
         to_layer3 {
             bindings = <&mo 3>;
             key-positions = <41 37>;
-            layers = <1>;
         };
 
         to_layer2 {
