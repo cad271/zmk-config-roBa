@@ -316,18 +316,11 @@
         to_layer2 {
             bindings = <&layer_layer 2 2>;
             key-positions = <38 41>;
-            layers = <0 1>;
         };
 
         cmd_opt {
             bindings = <&cmd_opt LEFT_COMMAND LEFT_ALT>;
             key-positions = <38 37>;
-        };
-
-        from_layer2 {
-            bindings = <&tog 2>;
-            key-positions = <41 39>;
-            layers = <2>;
         };
     };
 
