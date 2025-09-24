@@ -115,12 +115,12 @@
 
         lyu {
             bindings = <&lyu>;
-            key-positions = <12 24>;
+            key-positions = <21 33>;
         };
 
         mi {
             bindings = <&mi>;
-            key-positions = <19 31>;
+            key-positions = <10 22>;
         };
 
         do {
@@ -280,7 +280,7 @@
 
         li {
             bindings = <&li>;
-            key-positions = <10 22>;
+            key-positions = <19 31>;
         };
 
         lu {
@@ -295,7 +295,7 @@
 
         lo {
             bindings = <&lo>;
-            key-positions = <21 33>;
+            key-positions = <12 24>;
         };
 
         ki {
