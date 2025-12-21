@@ -31,11 +31,13 @@
         wo {
             bindings = <&wo>;
             key-positions = <18 17>;
+            layers = <0>;
         };
 
         a {
             bindings = <&kp A>;
             key-positions = <19 7>;
+            layers = <0>;
         };
 
         su {
