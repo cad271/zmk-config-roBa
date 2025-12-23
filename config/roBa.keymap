@@ -385,12 +385,12 @@
         };
 
         eisuu {
-            bindings = <&kp LANG2>;
+            bindings = <&ja_en>;
             key-positions = <4 14>;
         };
 
         kana {
-            bindings = <&kp LANGUAGE_1>;
+            bindings = <&en_ja>;
             key-positions = <17 5>;
         };
     };
@@ -973,14 +973,14 @@
         ja_en: ja_en {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_2 &tog 1>;
+            bindings = <&kp LANGUAGE_2 &to 1>;
             label = "JA_EN";
         };
 
         en_ja: en_ja {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_1 &tog 1>;
+            bindings = <&kp LANGUAGE_1 &to 0>;
             label = "EN_JA";
         };
 
@@ -1058,6 +1058,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        mmkp_behavior: mmkp_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MMKP_BEHAVIOR";
+            bindings = <&mo>, <&mkp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -1065,10 +1074,10 @@
 
         default_layer {
             bindings = <
-&bi             &ku                   &ltsu                 &kp COMMA                         &la                                                                                           &vu          &kp PERIOD  &na    &te  &bu
-&ta             &ka                   &nn                   &shi                              &ma                                      &kp K_MUTE                        &kp C_VOLUME_UP    &mo_         &lt 6 I     &kp U  &no  &to_
-&re             &lyo                  &ru                   &de                               &gi                                      &kp LS(LA(LG(P)))                 &kp C_VOLUME_DOWN  &mu          &ni         &ko    &ha  &ri
-&kp LANGUAGE_1  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &to_english2_behavior LEFT_ALT 0  &to_english_behavior LEFT_COMMAND SPACE  &ja_en_behavior LEFT_SHIFT 0      &kp BACKSPACE      &lt 4 ENTER                          &kp LANGUAGE_2
+&bi             &ku                   &ltsu                 &kp COMMA                            &la                                                                                                 &vu                    &kp PERIOD  &na    &te  &bu
+&ta             &ka                   &nn                   &shi                                 &ma                                      &kp K_MUTE             &kp C_VOLUME_UP                     &mo_                   &lt 6 I     &kp U  &no  &to_
+&re             &lyo                  &ru                   &de                                  &gi                                      &kp LS(LA(LG(P)))      &kp C_VOLUME_DOWN                   &mu                    &ni         &ko    &ha  &ri
+&kp LANGUAGE_1  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &to_english_behavior LEFT_ALT ENTER  &to_english_behavior LEFT_COMMAND SPACE  &kp BACKSPACE          &to_english2_behavior LEFT_SHIFT 0  &mmkp_behavior 4 LCLK                          &kp LANGUAGE_2
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
