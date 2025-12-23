@@ -378,6 +378,21 @@
             bindings = <&cmd_opt LEFT_COMMAND LEFT_ALT>;
             key-positions = <38 37>;
         };
+
+        click {
+            bindings = <&mkp LCLK>;
+            key-positions = <19 41>;
+        };
+
+        eisuu {
+            bindings = <&kp LANG2>;
+            key-positions = <4 14>;
+        };
+
+        kana {
+            bindings = <&kp LANGUAGE_1>;
+            key-positions = <17 5>;
+        };
     };
 
     macros {
