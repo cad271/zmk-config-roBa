@@ -43,271 +43,325 @@
         su {
             bindings = <&su>;
             key-positions = <13 14>;
+            layers = <0>;
         };
 
         tu {
             bindings = <&tsu>;
             key-positions = <13 18>;
+            layers = <0>;
         };
 
         ji {
             bindings = <&ji>;
             key-positions = <10 0>;
+            layers = <0>;
         };
 
         o {
             bindings = <&kp O>;
             key-positions = <12 2>;
+            layers = <0>;
         };
 
         ra {
             bindings = <&ra>;
             key-positions = <20 8>;
+            layers = <0>;
         };
 
         wa {
             bindings = <&wa>;
             key-positions = <18 12>;
+            layers = <0>;
         };
 
         da {
             bindings = <&da>;
             key-positions = <18 19>;
+            layers = <0>;
         };
 
         se {
             bindings = <&se>;
             key-positions = <19 20>;
+            layers = <0>;
         };
 
         sa {
             bindings = <&sa>;
             key-positions = <21 9>;
+            layers = <0>;
         };
 
         chi {
             bindings = <&chi>;
             key-positions = <20 21>;
+            layers = <0>;
         };
 
         ke {
             bindings = <&ke>;
             key-positions = <11 1>;
+            layers = <0>;
         };
 
         yo {
             bindings = <&yo>;
             key-positions = <13 12>;
+            layers = <0>;
         };
 
         so {
             bindings = <&so>;
             key-positions = <11 12>;
+            layers = <0>;
         };
 
         nobasu {
             bindings = <&kp MINUS>;
             key-positions = <11 10>;
+            layers = <0>;
         };
 
         me {
             bindings = <&me>;
             key-positions = <13 25>;
+            layers = <0>;
         };
 
         lyu {
             bindings = <&lyu>;
             key-positions = <21 33>;
+            layers = <0>;
         };
 
         mi {
             bindings = <&mi>;
             key-positions = <10 22>;
+            layers = <0>;
         };
 
         do {
             bindings = <&do_>;
             key-positions = <13 20>;
+            layers = <0>;
         };
 
         hi {
             bindings = <&hi>;
             key-positions = <18 30>;
+            layers = <0>;
         };
 
         e {
             bindings = <&kp E>;
             key-positions = <11 19>;
+            layers = <0>;
         };
 
         ro {
             bindings = <&ro>;
             key-positions = <11 20>;
+            layers = <0>;
         };
 
         ba {
             bindings = <&ba>;
             key-positions = <13 19>;
+            layers = <0>;
         };
 
         ya {
             bindings = <&ya>;
             key-positions = <12 19>;
+            layers = <0>;
         };
 
         go {
             bindings = <&go>;
             key-positions = <10 19>;
+            layers = <0>;
         };
 
         hu {
             bindings = <&fu>;
             key-positions = <10 21>;
+            layers = <0>;
         };
 
         lya {
             bindings = <&lya>;
             key-positions = <12 20>;
+            layers = <0>;
         };
 
         ne {
             bindings = <&ne>;
             key-positions = <10 20>;
+            layers = <0>;
         };
 
         ho {
             bindings = <&ho>;
             key-positions = <18 10>;
+            layers = <0>;
         };
 
         ge {
             bindings = <&ge>;
             key-positions = <11 21>;
+            layers = <0>;
         };
 
         bi {
             bindings = <&bi>;
             key-positions = <13 18>;
+            layers = <0>;
         };
 
         zu {
             bindings = <&zu>;
             key-positions = <12 21>;
+            layers = <0>;
         };
 
         he {
             bindings = <&he>;
             key-positions = <13 21>;
+            layers = <0>;
         };
 
         bo {
             bindings = <&bo>;
             key-positions = <11 18>;
+            layers = <0>;
         };
 
         gu {
             bindings = <&gu>;
             key-positions = <13 3 18>;
+            layers = <0>;
         };
 
         be {
             bindings = <&be>;
             key-positions = <13 3 19>;
+            layers = <0>;
         };
 
         yu {
             bindings = <&yu>;
             key-positions = <13 3 20>;
+            layers = <0>;
         };
 
         nakaguro {
             bindings = <&kp SLASH>;
             key-positions = <11 19 7>;
+            layers = <0>;
         };
 
         nu {
             bindings = <&nu>;
             key-positions = <13 3 21>;
+            layers = <0>;
         };
 
         za {
             bindings = <&za>;
             key-positions = <13 18 6>;
+            layers = <0>;
         };
 
         di {
             bindings = <&di>;
             key-positions = <12 18 6>;
+            layers = <0>;
         };
 
         du {
             bindings = <&du>;
             key-positions = <11 18 6>;
+            layers = <0>;
         };
 
         ze {
             bindings = <&ze>;
             key-positions = <10 18 6>;
+            layers = <0>;
         };
 
         zo {
             bindings = <&zo>;
             key-positions = <12 2 18>;
+            layers = <0>;
         };
 
         pa {
             bindings = <&pa>;
             key-positions = <12 2 19>;
+            layers = <0>;
         };
 
         pi {
             bindings = <&pi>;
             key-positions = <12 20 2>;
+            layers = <0>;
         };
 
         pu {
             bindings = <&pu>;
             key-positions = <12 2 21>;
+            layers = <0>;
         };
 
         pe {
             bindings = <&pe>;
             key-positions = <13 19 7>;
+            layers = <0>;
         };
 
         po {
             bindings = <&po>;
             key-positions = <12 19 7>;
+            layers = <0>;
         };
 
         li {
             bindings = <&li>;
             key-positions = <19 31>;
+            layers = <0>;
         };
 
         lu {
             bindings = <&lu>;
             key-positions = <11 23>;
+            layers = <0>;
         };
 
         le {
             bindings = <&le>;
             key-positions = <20 32>;
+            layers = <0>;
         };
 
         lo {
             bindings = <&lo>;
             key-positions = <12 24>;
+            layers = <0>;
         };
 
         ki {
             bindings = <&ki>;
             key-positions = <18 6>;
+            layers = <0>;
         };
 
         ga {
             bindings = <&ga>;
             key-positions = <13 3>;
+            layers = <0>;
         };
 
         to_layer3 {
