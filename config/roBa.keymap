@@ -407,6 +407,59 @@
             key-positions = <41 20>;
             layers = <0 1>;
         };
+
+        Command_T {
+            bindings = <&kp LG(T)>;
+            key-positions = <41 18>;
+            layers = <0 1>;
+        };
+
+        Control_Shift_Tab {
+            bindings = <&kp RC(LS(TAB))>;
+            key-positions = <41 19>;
+            layers = <0 1>;
+        };
+
+        Control_Tab {
+            bindings = <&kp RC(TAB)>;
+            key-positions = <41 20>;
+            layers = <0 1>;
+        };
+
+        Command_W {
+            bindings = <&kp LG(W)>;
+            key-positions = <41 21>;
+            layers = <0 1>;
+        };
+
+        Command_Q {
+            bindings = <&kp LG(Q)>;
+            key-positions = <41 8>;
+            layers = <0 1>;
+        };
+
+        Command_Tab {
+            bindings = <&command_tab>;
+            key-positions = <30 19>;
+        };
+
+        Control_Down {
+            bindings = <&kp LC(DOWN_ARROW)>;
+            key-positions = <41 32>;
+            layers = <0 1>;
+        };
+
+        Control_Left {
+            bindings = <&kp LC(LEFT_ARROW)>;
+            key-positions = <41 30>;
+            layers = <0 1>;
+        };
+
+        Control_Right {
+            bindings = <&kp LC(RIGHT_ARROW)>;
+            key-positions = <41 31>;
+            layers = <0 1>;
+        };
     };
 
     macros {
@@ -1016,6 +1069,21 @@
 
             label = "CMD_OPT";
         };
+
+        command_tab: command_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND &kp TAB>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp TAB>;
+
+            label = "COMMAND_TAB";
+        };
     };
 
     behaviors {
@@ -1106,10 +1174,10 @@
 
         KANA {
             bindings = <
-&bi    &ku                   &ltsu                 &kp COMMA                              &la                                                                                                     &vu                    &kp PERIOD  &na    &te                        &bu
-&ta    &ka                   &nn                   &shi                                   &ma                                        &kp K_MUTE             &kp C_VOLUME_UP                       &mo_                   &lt 7 I     &kp U  &no_shortcut_behavior 9 0  &to_
-&re    &lyo                  &ru                   &de                                    &gi                                        &kp LS(LA(LG(P)))      &kp C_VOLUME_DOWN                     &mu                    &ni         &ko    &ha                        &ri
-&mo 8  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &to_modifiers_behavior LEFT_ALT ENTER  &to_modifiers_behavior LEFT_COMMAND SPACE  &kp BACKSPACE          &to_modifiers2_behavior LEFT_SHIFT 0  &lmkp_behavior 6 LCLK                                                &kp LANGUAGE_2
+&bi    &ku                   &ltsu                 &kp COMMA                              &la                                                                                                     &vu                    &kp PERIOD  &na    &te  &bu
+&ta    &ka                   &nn                   &shi                                   &ma                                        &kp K_MUTE             &kp C_VOLUME_UP                       &mo_                   &lt 7 I     &kp U  &no  &to_
+&re    &lyo                  &ru                   &de                                    &gi                                        &kp LS(LA(LG(P)))      &kp C_VOLUME_DOWN                     &mu                    &ni         &ko    &ha  &ri
+&mo 8  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &to_modifiers_behavior LEFT_ALT ENTER  &to_modifiers_behavior LEFT_COMMAND SPACE  &kp BACKSPACE          &to_modifiers2_behavior LEFT_SHIFT 0  &lmkp_behavior 6 LCLK                          &kp LANGUAGE_2
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -1173,10 +1241,10 @@
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans          &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp LEFT_ARROW  &kp RIGHT_ARROW  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans          &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                           &trans
             >;
         };
 
@@ -1186,15 +1254,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans        &trans        &trans        &bt BT_CLR    &bt BT_CLR_ALL
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                  &trans
-            >;
-        };
-
-        SHORTCUT {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
     };
