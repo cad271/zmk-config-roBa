@@ -452,13 +452,11 @@
         Control_Left {
             bindings = <&kp LC(LEFT_ARROW)>;
             key-positions = <41 30>;
-            layers = <0 1>;
         };
 
         Control_Right {
             bindings = <&kp LC(RIGHT_ARROW)>;
             key-positions = <41 31>;
-            layers = <0 1>;
         };
     };
 
