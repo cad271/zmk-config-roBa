@@ -11,6 +11,7 @@
 &trackball {
     automouse-layer = <6>;
     scroll-layers = <7>;
+
     // arrows {
     //     layers = <3>;
     //     bindings =
@@ -1108,7 +1109,7 @@
         to_modifiers2_behavior: to_modifiers2_behavior {
             compatible = "zmk,behavior-hold-tap";
             label = "TO_MODIFIERS2_BEHAVIOR";
-            bindings = <&to_english>, <&susumu_modoru_behavior>;
+            bindings = <&kp>, <&susumu_modoru_behavior>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
