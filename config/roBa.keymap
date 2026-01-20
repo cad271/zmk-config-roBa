@@ -376,12 +376,12 @@
 
         eisuu {
             bindings = <&ja_en>;
-            key-positions = <4 14>;
+            key-positions = <38 12>;
         };
 
         kana {
             bindings = <&en_ja>;
-            key-positions = <17 5>;
+            key-positions = <38 13>;
         };
 
         Command_T {
