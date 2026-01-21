@@ -8,6 +8,8 @@
     quick-tap-ms = <0>;
 };
 
+&lt { flavor = "balanced"; };
+
 &trackball {
     automouse-layer = <6>;
     scroll-layers = <7>;
@@ -1096,6 +1098,8 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            hold-while-undecided;
+            flavor = "balanced";
         };
 
         layer_layer: layer_layer {
@@ -1141,6 +1145,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            flavor = "balanced";
         };
 
         lmkp_behavior: lmkp_behavior {
@@ -1150,6 +1155,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            flavor = "balanced";
         };
 
         kmkp_behavior: kmkp_behavior {
@@ -1159,6 +1165,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            flavor = "hold-preferred";
         };
 
         no_shortcut_behavior: no_shortcut_behavior {
