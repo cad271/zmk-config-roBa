@@ -15,16 +15,13 @@
     scroll-layers = <7>;
 
     arrows {
-         layers = <3>;
-         bindings =
-             <&zl>,
-             <&zh>,
-             <&zh>,
-             <&zj>;
-         tick = <50>;
-         wait-ms = <20>;
-         tap-ms = <10>;
-     };
+        layers = <3>;
+        bindings = <&zl>, <&zh>, <&zh>, <&zj>;
+
+        tick = <50>;
+        wait-ms = <20>;
+        tap-ms = <10>;
+    };
 };
 
 / {
@@ -1064,7 +1061,12 @@
         zh: zh {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_1 &kp Z &kp H>;
+            bindings =
+                <&macro_release>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp LANGUAGE_1 &kp Z &kp H>;
+
             label = "ZH";
         };
 
