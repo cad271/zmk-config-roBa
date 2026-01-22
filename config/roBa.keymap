@@ -17,11 +17,11 @@
     arrows {
          layers = <3>;
          bindings =
-             <&kp LANGUAGE_1 &kp Z &kp L>,
-             <&kp LANGUAGE_1 &kp Z &kp H>,
-             <&kp LANGUAGE_1 &kp Z &kp K>,
-             <&kp LANGUAGE_1 &kp Z &kp J>;
-         tick = <100>;
+             <&zl>,
+             <&zh>,
+             <&zh>,
+             <&zj>;
+         tick = <50>;
          wait-ms = <20>;
          tap-ms = <10>;
      };
