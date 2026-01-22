@@ -14,17 +14,17 @@
     automouse-layer = <6>;
     scroll-layers = <7>;
 
-    // arrows {
-    //     layers = <3>;
-    //     bindings =
-    //         <&kp RIGHT_ARROW>,
-    //         <&kp LEFT_ARROW>,
-    //         <&kp UP_ARROW>,
-    //         <&kp DOWN_ARROW>;
-    //     tick = <10>;
-    //     wait-ms = <5>;
-    //     tap-ms = <5>;
-    // };
+    arrows {
+         layers = <3>;
+         bindings =
+             <&kp LANGUAGE_1 &kp Z &kp L>,
+             <&kp LANGUAGE_1 &kp Z &kp H>,
+             <&kp LANGUAGE_1 &kp Z &kp K>,
+             <&kp LANGUAGE_1 &kp Z &kp J>;
+         tick = <100>;
+         wait-ms = <20>;
+         tap-ms = <10>;
+     };
 };
 
 / {
@@ -1064,28 +1064,28 @@
         zh: zh {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp Z &kp H>;
+            bindings = <&kp LANGUAGE_1 &kp Z &kp H>;
             label = "ZH";
         };
 
         zj: zj {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp Z &kp J>;
+            bindings = <&kp LANGUAGE_1 &kp Z &kp J>;
             label = "ZJ";
         };
 
         zk: zk {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp Z &kp K>;
+            bindings = <&kp LANGUAGE_1 &kp Z &kp K>;
             label = "ZK";
         };
 
         zl: zl {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp Z &kp L>;
+            bindings = <&kp LANGUAGE_1 &kp Z &kp L>;
             label = "ZL";
         };
     };
