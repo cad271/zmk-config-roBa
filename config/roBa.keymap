@@ -16,10 +16,10 @@
 
     arrows {
         layers = <3>;
-        bindings = <&zl>, <&zh>, <&zh>, <&zj>;
+        bindings = <&zl>, <&zk>, <&zh>, <&zj>;
 
         tick = <50>;
-        wait-ms = <20>;
+        wait-ms = <50>;
         tap-ms = <10>;
     };
 };
