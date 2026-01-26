@@ -1111,31 +1111,19 @@
 
             label = "ZL";
         };
-
-        re_kp: re_kp {
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>;
-            bindings =
-                <&macro_param_1to1>,
-                <&macro_release>,
-                <&kp MACRO_PLACEHOLDER &macro_param_2to1>,
-                <&macro_tap>,
-                <&kp MACRO_PLACEHOLDER>;
-
-            label = "RE_KP";
-        };
     };
 
     behaviors {
         to_modifiers_behavior: to_modifiers_behavior {
             compatible = "zmk,behavior-hold-tap";
             label = "TO_MODIFIERS_BEHAVIOR";
-            bindings = <&to_english>, <&re_kp>;
+            bindings = <&to_english>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
             hold-while-undecided;
+            retro-tap;
         };
 
         layer_layer: layer_layer {
@@ -1144,24 +1132,6 @@
             #binding-cells = <2>;
             bindings = <&mo>, <&tog>;
 
-            tapping-term-ms = <200>;
-        };
-
-        ja_en_behavior: ja_en_behavior {
-            compatible = "zmk,behavior-hold-tap";
-            label = "JA_EN_BEHAVIOR";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&ja_en>;
-
-            tapping-term-ms = <200>;
-        };
-
-        en_ja_behavior: en_ja_behavior {
-            compatible = "zmk,behavior-hold-tap";
-            label = "EN_JA_BEHAVIOR";
-            bindings = <&kp>, <&en_ja>;
-
-            #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
 
@@ -1190,7 +1160,7 @@
             bindings = <&mo>, <&mkp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             flavor = "balanced";
         };
 
@@ -1200,17 +1170,8 @@
             bindings = <&kp>, <&mkp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             flavor = "hold-preferred";
-        };
-
-        no_shortcut_behavior: no_shortcut_behavior {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NO_SHORTCUT_BEHAVIOR";
-            bindings = <&mo>, <&no>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
         };
     };
 
@@ -1222,7 +1183,7 @@
 &bi    &ku      &ltsu             &kp COMMA                              &la                                                                                                 &vu                    &kp PERIOD  &na    &te  &bu
 &ta    &ka      &nn               &shi                                   &ma                                    &kp K_MUTE             &kp C_VOLUME_UP                       &mo_                   &lt 7 I     &kp U  &no  &to_
 &re    &lyo     &ru               &de                                    &gi                                    &kp LS(LA(LG(P)))      &kp C_VOLUME_DOWN                     &mu                    &ni         &ko    &ha  &ri
-&mo 8  &kp TAB  &kp LEFT_CONTROL  &to_modifiers_behavior LEFT_ALT LEFT_ALT ENTER  &to_modifiers_behavior LEFT_GUI LEFT_GUI SPACE  &kp BACKSPACE          &to_modifiers2_behavior LEFT_SHIFT 0  &lmkp_behavior 5 LCLK                          &kp RC(UP_ARROW)
+&mo 8  &kp TAB  &kp LEFT_CONTROL  &to_modifiers_behavior LEFT_ALT ENTER  &to_modifiers_behavior LEFT_GUI SPACE  &kp BACKSPACE          &to_modifiers2_behavior LEFT_SHIFT 0  &lmkp_behavior 5 LCLK                          &kp RC(UP_ARROW)
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
