@@ -433,6 +433,12 @@
             bindings = <&kp LC(RIGHT_ARROW)>;
             key-positions = <41 31>;
         };
+
+        Command_R {
+            bindings = <&kp LG(R)>;
+            key-positions = <41 7>;
+            layers = <0 1>;
+        };
     };
 
     macros {
@@ -1115,7 +1121,6 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            hold-while-undecided;
             flavor = "balanced";
         };
 
@@ -1211,10 +1216,10 @@
 
         ENGLISH {
             bindings = <
-&kp B   &kp L   &kp D   &kp W   &kp FSLH                       &kp MINUS  &kp F    &kp O      &kp U    &kp J
+&kp B   &kp L   &kp D   &kp W   &kp FSLH                      &kp MINUS  &kp F    &kp O      &kp U    &kp J
 &kp N   &kp R   &kp T   &kp S   &kp G     &trans      &trans  &kp Y      &lt 7 H  &kp A      &kp E    &kp I
 &kp Q   &kp X   &kp M   &kp C   &kp V     &trans      &trans  &kp K      &kp P    &kp COMMA  &kp DOT  &kp Z
-&trans  &trans  &trans  &trans  &trans    &trans      &trans  &trans                               &trans
+&trans  &trans  &trans  &trans  &trans    &trans      &trans  &trans                                  &trans
             >;
         };
 
@@ -1267,9 +1272,9 @@
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans          &trans           &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &kp UP_ARROW    &trans           &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp LEFT_ARROW  &kp RIGHT_ARROW  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans          &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp DOWN_ARROW  &trans           &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                           &trans
             >;
         };
