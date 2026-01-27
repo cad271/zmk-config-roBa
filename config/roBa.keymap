@@ -1120,9 +1120,8 @@
             bindings = <&to_english>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <0>;
+            tapping-term-ms = <100>;
             flavor = "balanced";
-            retro-tap;
         };
 
         layer_layer: layer_layer {
