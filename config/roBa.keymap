@@ -323,7 +323,7 @@
         };
 
         li {
-            bindings = <&li_behavior>;
+            bindings = <&li>;
             key-positions = <19 31>;
             layers = <0 6>;
         };
@@ -1218,6 +1218,16 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
         };
+
+        lh_behavior: lh_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LH_BEHAVIOR";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
     };
 
     keymap {
@@ -1236,10 +1246,10 @@
 
         ENGLISH {
             bindings = <
-&kp B   &kp L   &kp D   &kp W   &kp FSLH                      &kp MINUS  &kp F    &kp O      &kp U    &kp J
-&kp N   &kp R   &kp T   &kp S   &kp G     &trans      &trans  &kp Y      &lt 7 H  &kp A      &kp E    &kp I
-&kp Q   &kp X   &kp M   &kp C   &kp V     &trans      &trans  &kp K      &kp P    &kp COMMA  &kp DOT  &kp Z
-&trans  &trans  &trans  &trans  &trans    &trans      &trans  &trans                                  &trans
+&kp B   &kp L   &kp D   &kp W   &kp FSLH                      &kp MINUS  &kp F             &kp O      &kp U    &kp J
+&kp N   &kp R   &kp T   &kp S   &kp G     &trans      &trans  &kp Y      &lh_behavior 7 H  &kp A      &kp E    &kp I
+&kp Q   &kp X   &kp M   &kp C   &kp V     &trans      &trans  &kp K      &kp P             &kp COMMA  &kp DOT  &kp Z
+&trans  &trans  &trans  &trans  &trans    &trans      &trans  &trans                                           &trans
             >;
         };
 
