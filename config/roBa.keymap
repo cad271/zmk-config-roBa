@@ -17,9 +17,22 @@
         layers = <3>;
         bindings = <&zl>, <&zh>, <&zk>, <&zj>;
 
-        tick = <50>;
-        wait-ms = <70>;
-        tap-ms = <10>;
+        tick = <40>;
+        wait-ms = <50>;
+        tap-ms = <5>;
+    };
+
+    arrows {
+        layers = <4>;
+        bindings =
+            <&kp RIGHT_ARROW>,
+            <&kp LEFT_ARROW>,
+            <&kp UP_ARROW>,
+            <&kp DOWN_ARROW>;
+
+        tick = <10>;
+        wait-ms = <5>;
+        tap-ms = <5>;
     };
 };
 
