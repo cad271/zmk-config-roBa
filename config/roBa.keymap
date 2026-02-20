@@ -11,8 +11,6 @@
 &lt { flavor = "balanced"; };
 
 &trackball {
-    scroll-layers = <7>;
-
     arrows {
         layers = <3>;
         bindings = <&zl>, <&zh>, <&zk>, <&zj>;
