@@ -1145,13 +1145,20 @@
             bindings = <&kp O>;
             label = "O";
         };
+
+        kp_macro: kp_macro {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "KP_MACRO";
+        };
     };
 
     behaviors {
         to_modifiers_behavior: to_modifiers_behavior {
             compatible = "zmk,behavior-hold-tap";
             label = "TO_MODIFIERS_BEHAVIOR";
-            bindings = <&to_english>, <&kp>;
+            bindings = <&to_english>, <&kp_macro>;
 
             #binding-cells = <2>;
             tapping-term-ms = <170>;
@@ -1208,20 +1215,10 @@
             flavor = "hold-preferred";
         };
 
-        li_behavior: li_behavior {
+        lkp_behavior: lkp_behavior {
             compatible = "zmk,behavior-hold-tap";
-            label = "LI_BEHAVIOR";
-            bindings = <&mo>, <&i>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-        };
-
-        lh_behavior: lh_behavior {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LH_BEHAVIOR";
-            bindings = <&mo>, <&kp>;
+            label = "LKP_BEHAVIOR";
+            bindings = <&mo>, <&kp_macro>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -1234,10 +1231,10 @@
 
         KANA {
             bindings = <
-&bu    &ku      &ltsu             &kp COMMA                              &la                                                                                                 &vu                    &kp PERIOD        &na  &te  &bi
-&ta    &ka      &nn               &shi                                   &ma                                    &kp K_MUTE             &kp C_VOLUME_UP                       &mo_                   &li_behavior 7 0  &u   &no  &to_
-&re    &lyo     &ru               &ni                                    &gi                                    &kp LS(LA(LG(P)))      &kp C_VOLUME_DOWN                     &mu                    &de               &ko  &ha  &ri
-&mo 8  &kp TAB  &kp LEFT_CONTROL  &to_modifiers_behavior LEFT_ALT ENTER  &to_modifiers_behavior LEFT_GUI SPACE  &kp BACKSPACE          &to_modifiers2_behavior LEFT_SHIFT 0  &lmkp_behavior 5 LCLK                              &kp RC(UP_ARROW)
+&bu    &ku      &ltsu             &kp COMMA                              &la                                                                                                 &vu                    &kp PERIOD         &na                &te  &bi
+&ta    &ka      &nn               &shi                                   &ma                                    &kp K_MUTE             &kp C_VOLUME_UP                       &mo_                   &lkp_behavior 7 I  &lkp_behavior 4 U  &no  &to_
+&re    &lyo     &ru               &ni                                    &gi                                    &kp LS(LA(LG(P)))      &kp C_VOLUME_DOWN                     &mu                    &de                &ko                &ha  &ri
+&mo 8  &kp TAB  &kp LEFT_CONTROL  &to_modifiers_behavior LEFT_ALT ENTER  &to_modifiers_behavior LEFT_GUI SPACE  &kp BACKSPACE          &to_modifiers2_behavior LEFT_SHIFT 0  &lmkp_behavior 5 LCLK                                             &kp RC(UP_ARROW)
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -1245,10 +1242,10 @@
 
         ENGLISH {
             bindings = <
-&kp B   &kp L   &kp D   &kp W   &kp FSLH                      &kp MINUS  &kp F             &kp O      &kp U    &kp J
-&kp N   &kp R   &kp T   &kp S   &kp G     &trans      &trans  &kp Y      &lh_behavior 7 H  &kp A      &kp E    &kp I
-&kp Q   &kp X   &kp M   &kp C   &kp V     &trans      &trans  &kp K      &kp P             &kp COMMA  &kp DOT  &kp Z
-&trans  &trans  &trans  &trans  &trans    &trans      &trans  &trans                                           &trans
+&kp B   &kp L   &kp D   &kp W   &kp FSLH                      &kp MINUS  &kp F              &kp O              &kp U    &kp J
+&kp N   &kp R   &kp T   &kp S   &kp G     &trans      &trans  &kp Y      &lkp_behavior 7 H  &lkp_behavior 4 A  &kp E    &kp I
+&kp Q   &kp X   &kp M   &kp C   &kp V     &trans      &trans  &kp K      &kp P              &kp COMMA          &kp DOT  &kp Z
+&trans  &trans  &trans  &trans  &trans    &trans      &trans  &trans                                                    &trans
             >;
         };
 
