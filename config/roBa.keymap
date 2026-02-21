@@ -15,7 +15,7 @@
         layers = <3>;
         bindings = <&zl>, <&zh>, <&zk>, <&zj>;
 
-        tick = <40>;
+        tick = <10>;
         wait-ms = <300>;
         tap-ms = <5>;
     };
@@ -29,7 +29,7 @@
             <&kp DOWN_ARROW>;
 
         tick = <10>;
-        wait-ms = <15>;
+        wait-ms = <30>;
         tap-ms = <5>;
     };
 };
