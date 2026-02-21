@@ -22,10 +22,10 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_temp_layer 4 700>;
+        input-processors = <&zip_temp_layer 6 700>;
 
         scroll-layer {
-            layers = <5>;
+            layers = <7>;
             input-processors = <&zip_xy_to_scroll_mapper>, 
                                <&zip_scroll_scaler 1 16>;
         };
