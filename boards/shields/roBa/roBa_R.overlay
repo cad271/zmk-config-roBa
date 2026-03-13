@@ -3,7 +3,6 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/zmk/input.h> 
 
 &default_transform {
     col-offset = <6>;
@@ -72,8 +71,8 @@
 
     irq-gpios = <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     motion-gpios = <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    zephyr,axis-x = <&input_rel_x>;
-    zephyr,axis-y = <&input_rel_y>;
+    zephyr,axis-x = <0x00>;
+    zephyr,axis-y = <0x01>;
     status = "okay";
     };
 };
