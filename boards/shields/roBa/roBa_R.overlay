@@ -68,8 +68,11 @@
     spi-max-frequency = <2000000>;
     //automouse-layer = <6>;
 
-    irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    irq-gpios = <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     motion-gpios = <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    zephyr,axis-x = <&input_rel_x>;
+    zephyr,axis-y = <&input_rel_y>;
+    status = "okay";
     };
 };
 
