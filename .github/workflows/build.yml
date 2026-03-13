@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:stable
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout Config
         uses: actions/checkout@v4
@@ -16,29 +18,35 @@ jobs:
         with:
           repository: zmkfirmware/zmk
           ref: main
-          path: zmk-workspace # ZMK本体をここに落とす
+          path: zmk-workspace
 
       - name: West Init & Update
         run: |
           cd zmk-workspace
-          # appフォルダにあるwest.ymlを直接指定して初期化
           west init -l app/
           west update
           west zephyr-export
 
+      - name: Build Left
+        run: |
+          cd zmk-workspace
+          west build -p -s app -b xiao_ble -- -DSHIELD=roBa_L -DZMK_CONFIG="${GITHUB_WORKSPACE}/config/config" -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE}/config"
+          cp build/zephyr/zmk.uf2 ../roBa_L.uf2
+
       - name: Build Right
         run: |
           cd zmk-workspace
-          west build -s app -b xiao_ble -- \
-            -DSHIELD=roBa_R \
-            -DZMK_CONFIG="${GITHUB_WORKSPACE}/config/config" \
-            -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE}/config"
+          west build -p -s app -b xiao_ble -- -DSHIELD=roBa_R -DZMK_CONFIG="${GITHUB_WORKSPACE}/config/config" -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE}/config"
+          cp build/zephyr/zmk.uf2 ../roBa_R.uf2
 
-      - name: Copy Artifact
-        run: cp zmk-workspace/build/zephyr/zmk.uf2 roBa_R.uf2
+      - name: Build Reset
+        run: |
+          cd zmk-workspace
+          west build -p -s app -b xiao_ble -- -DSHIELD=settings_reset -DZMK_CONFIG="${GITHUB_WORKSPACE}/config/config" -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE}/config"
+          cp build/zephyr/zmk.uf2 ../settings_reset.uf2
 
       - name: Archive
         uses: actions/upload-artifact@v4
         with:
-          name: firmware
+          name: roBa_firmware_all
           path: "*.uf2"
