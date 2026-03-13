@@ -6,25 +6,30 @@ jobs:
     container:
       image: zmkfirmware/zmk-build-arm:stable
     steps:
-      - name: Checkout
+      - name: Checkout Config
         uses: actions/checkout@v4
         with:
           path: config
 
-      - name: West Init
+      - name: Checkout ZMK
+        uses: actions/checkout@v4
+        with:
+          repository: zmkfirmware/zmk
+          ref: main
+          path: zmk-workspace # ZMK本体をここに落とす
+
+      - name: West Init & Update
         run: |
-          # ディレクトリを先に作って、その中で実行するスタイルに変更
-          mkdir zmk-workspace
           cd zmk-workspace
-          west init -m https://github.com/zmkfirmware/zmk --mr main
-          # ZMKのwest.ymlはappにあるので、そこを指定してupdate
+          # appフォルダにあるwest.ymlを直接指定して初期化
+          west init -l app/
           west update
           west zephyr-export
 
       - name: Build Right
         run: |
           cd zmk-workspace
-          west build -s zmk/app -b xiao_ble -- \
+          west build -s app -b xiao_ble -- \
             -DSHIELD=roBa_R \
             -DZMK_CONFIG="${GITHUB_WORKSPACE}/config/config" \
             -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE}/config"
