@@ -9,25 +9,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          path: config # 自分の設定ファイルを /config フォルダに展開
+          path: config # 自分の設定（roBaのリポジトリ）を /config フォルダへ
 
       - name: West Init
         run: |
-          west init -m https://github.com/zmkfirmware/zmk --mr main zmk-root
-          cd zmk-root
+          # ZMKリポジトリを /zmk フォルダへ初期化（appディレクトリを指すのが正解）
+          west init -m https://github.com/zmkfirmware/zmk --src zmk/app zmk-workspace
+          cd zmk-workspace
           west update
           west zephyr-export
 
       - name: Build Right
         run: |
-          cd zmk-root
+          cd zmk-workspace
+          # DZMK_EXTRA_MODULESは「roBaのシールド定義がある場所」をピンポイントで指定
           west build -s zmk/app -b xiao_ble -- \
             -DSHIELD=roBa_R \
             -DZMK_CONFIG="${GITHUB_WORKSPACE}/config/config" \
             -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE}/config"
 
       - name: Copy Artifact
-        run: cp zmk-root/build/zephyr/zmk.uf2 roBa_R.uf2
+        run: cp zmk-workspace/build/zephyr/zmk.uf2 roBa_R.uf2
 
       - name: Archive
         uses: actions/upload-artifact@v4
