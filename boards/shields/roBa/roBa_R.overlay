@@ -70,13 +70,12 @@
     irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
         cpi = <400>;                    // ← CPI（旧CPI_DIVIDOR=1なのでそのまま）
-        invert-x;                       // 旧 INVERT_X=n → 必要なら削除
-        invert-y;                       // ORIENTATION_180相当（roBaのマウントで180°回転なら両方invert）
-        invert-scroll-x;                // 旧 INVERT_SCROLL_X=y
-        // swap-xy;                     // 必要なら追加（X/Y軸入れ替え）
 
         force-awake;                    // 低遅延用（おすすめ）
         force-awake-4ms-mode;           // 250Hz相当（旧 POLLING_RATE_125_SW=y の代替）
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
     };
 };
 
