@@ -31,6 +31,11 @@
                                <&zip_scroll_scaler 1 16>;
         };
     };
+    /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        /* require-prior-idle-ms = <2000>;  ← 必要なら追加（デフォルトでOK） */
+    };
 };
 
 &pinctrl {
@@ -70,7 +75,7 @@
     irq-gpios = <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
         cpi = <400>;                    // ← CPI（旧CPI_DIVIDOR=1なのでそのまま）
-
+        invert-x;
         force-awake;                    // 低遅延用（おすすめ）
         force-awake-4ms-mode;           // 250Hz相当（旧 POLLING_RATE_125_SW=y の代替）
         evt-type = <INPUT_EV_REL>;
