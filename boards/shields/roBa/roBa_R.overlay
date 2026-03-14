@@ -35,6 +35,7 @@
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
         /* require-prior-idle-ms = <2000>;  ← 必要なら追加（デフォルトでOK） */
+        excluded-positions = <19 20 21>;
     };
 };
 
@@ -84,10 +85,3 @@
     };
 };
 
-&zip_temp_layer {
-    excluded-positions = <
-        19 // K
-        20 // L
-        21 // 
-    >;
-};
