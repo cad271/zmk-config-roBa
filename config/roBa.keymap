@@ -386,11 +386,13 @@
         eisuu {
             bindings = <&ja_en>;
             key-positions = <38 12>;
+            layers = <0 1>;
         };
 
         kana {
             bindings = <&en_ja>;
             key-positions = <38 13>;
+            layers = <0 1>;
         };
 
         Command_T {
