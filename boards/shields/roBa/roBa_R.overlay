@@ -77,8 +77,8 @@
 
         cpi = <400>;                    // ← CPI（旧CPI_DIVIDOR=1なのでそのまま）
         invert-x;
-        force-awake;                    // 低遅延用（おすすめ）
-        force-awake-4ms-mode;           // 250Hz相当（旧 POLLING_RATE_125_SW=y の代替）
+        //force-awake;                    // 低遅延用（おすすめ）
+        //force-awake-4ms-mode;           // 250Hz相当（旧 POLLING_RATE_125_SW=y の代替）
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
